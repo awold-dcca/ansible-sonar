@@ -8,14 +8,14 @@
   with_items:
     - httpd
 
-- name: Configure Reverse Proxy
-  template:
-    src: sonar.conf.j2
-    dest: /etc/httpd/conf.d/sonar.{{your_domain}}.conf
-    owner: root
-    group: wheel
-    mode: 0644
-  become: true
+#- name: Configure Reverse Proxy
+#  template:
+#    src: sonar.conf.j2
+#    dest: /etc/httpd/conf.d/sonar.{{your_domain}}.conf
+#    owner: root
+#    group: wheel
+#    mode: 0644
+#  become: true
 
 - name: Start and Enable httpd Service
   service:

@@ -6,19 +6,19 @@
     state: directory
     mode: 777
   with_items:
-    - /etc/sonarqube
+    - /app/sonarqube
 
 - name: Copy from Temp Files to correct location
   copy:
     src: sonarqube-6.5/
-    dest: /etc/sonarqube/
+    dest: /app/sonarqube/
     directory_mode: yes
     force: no
 
 - name: Template the correct properties file
   template:
     src: sonar.properties.j2
-    dest: /etc/sonarqube/conf/sonar.properties
+    dest: /app/sonarqube/conf/sonar.properties
     owner: root
     group: wheel
     mode: 0644
